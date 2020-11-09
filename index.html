@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Arla Project</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Arla Project">
+	<meta name="author" content="Arla Group">
+	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
+	<script src="https://kit.fontawesome.com/01e0a0f5d5.js"></script>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" type="image/png" href="img/feed.png"/>
+</head>
+
+<body onhashchange="pageChange()">
+	<!-- tabbar navigation -->
+	<nav class="hide">
+		<a href="#dashboard">Dashboard</a>
+		<a href="#cows">Cows</a>
+		<a href="#energy">Energy</a>
+		<a href="#digestion">Digestion</a>
+		<a href="#feed">Imported Feed</a>
+	</nav>
+
+	<!-- pages -->
+	<!-- dashboard page -->
+	<section id="dashboard" class="page">
+	<h2 style="color: white;">Select your datasheet</h2>
+		<div class="flex-container">
+			<div class="flex-child">
+				<a href="#cows"><img src="img/cows.png" class="resp-img" alt="cows"></a>
+				<br>
+				<br>
+				Cows
+				<br>
+				<br>
+				<a href="#cows" style="font-size: 16px; color: #004F1B;">Click here to see data</a>
+			</div>
+			<div class="flex-child">
+				<a href="#energy"><img src="img/energy.png" class="resp-img" alt="cows"></a>
+				<br>
+				<br>
+				Energy
+				<br>
+				<br>
+				<a href="#energy" style="font-size: 16px; color: #004F1B">Click here to see data</a>
+			</div>
+		</div>
+		<div class="flex-container">
+			<div class="flex-child">
+				<a href="#digestion"><img src="img/digestion.png" class="resp-img" alt="cows"></a>
+				<br>
+				<br>
+				Digestion
+				<br>
+				<br>
+				<a href="#digestion" style="font-size: 16px; color: #004F1B">Click here to see data</a>
+			</div>
+			<div class="flex-child">
+				<a href="#feed"><img src="img/feed.png" class="resp-img" alt="cows"></a>
+				<br>
+				<br>
+				Imported Feed
+				<br>
+				<br>
+				<a href="#feed" style="font-size: 16px; color: #004F1B">Click here to see data</a>
+			</div>
+		</div>
+		<a class="btn1" href="#" onclick="logout()">Logout</a>
+	</section>
+
+	<!-- cows page -->
+	<section id="cows" class="page">
+		<a href="#dashboard"><img src="img/arla_logo.png" class="resp-img1" alt="logo"></a>
+		<h1 style="color: white; margin-bottom: 5%">Cows Datasheet</h1>
+		<div class="flex-container5">
+			<div class="flex-child5">
+				<canvas id="chartContainer"></canvas>
+			</div>
+			<div class="flex-child5">
+				<canvas id="chartContainer1"></canvas>
+			</div>
+		</div>
+	</section>
+
+	<!-- energy page -->
+	<section id="energy" class="page">
+		<a href="#dashboard"><img src="img/arla_logo.png" class="resp-img1" alt="logo"></a>
+		<h1 style="color: white; margin-bottom: 5%">Energy Datasheet</h1>
+		<div class="flex-container5">
+			<div class="flex-child5">
+				<canvas id="chartContainer2"></canvas>
+			</div>
+			<div class="flex-child5">
+				<canvas id="chartContainer3"></canvas>
+			</div>
+		</div>
+	</section>
+
+	<!-- digestion page -->
+	<section id="digestion" class="page">
+		<a href="#dashboard"><img src="img/arla_logo.png" class="resp-img1" alt="logo"></a>
+		<h1 style="color: white; margin-bottom: 5%">Digestion Datasheet</h1>
+		<div class="flex-container5">
+			<canvas id="chartContainer4"></canvas>
+		</div>
+	</section>
+
+	<!-- Feed page -->
+	<section id="feed" class="page">
+		<a href="#dashboard"><img src="img/arla_logo.png" class="resp-img1" alt="logo"></a>
+		<h1 style="color: white; margin-bottom: 5%">Imported Feed Datasheet</h1>
+		<div class="flex-container5">
+			<canvas id="chartContainer5"></canvas>
+		</div>
+	</section>
+
+	<!-- login page -->
+	<section id="login" class="page">
+		<!-- firebase auth container  -->
+		<img src="img/arla_logo.png" alt="logo">
+		<h2 style="color: white;">Login</h2>
+		<div id="firebaseui-auth-container"></div>
+	</section>
+
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+	<!-- Load chart.js from CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+	<!-- spa js file -->
+	<script src="js/spa.js"></script>
+	<!-- main js file -->
+	<script src="js/main.js"></script>
+	<!-- cows js file -->
+	<script src="js/cows.js"></script>
+	<script src="js/cows1.js"></script>
+	<script src="js/energy.js"></script>
+	<script src="js/energy1.js"></script>
+	<script src="js/digestion.js"></script>
+	<script src="js/feed.js"></script>
+</body>
+
+</html>
